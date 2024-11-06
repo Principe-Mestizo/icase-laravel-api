@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product\Categorie;
 use App\Models\Product\Product;
-use Illuminate\Http\Request;
+
 
 class SalesController extends Controller
 {
@@ -22,4 +22,5 @@ class SalesController extends Controller
             'total_categories' => $totalCategories
         ]);
     }
+
 }

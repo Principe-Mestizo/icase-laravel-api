@@ -2,6 +2,9 @@
 
 namespace App\Models\Product;
 
+use App\Models\InventoryMovements;
+use App\Models\PurchaseDetail;
+use App\Models\SaleDetail;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,5 +44,21 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Categorie::class);
+    }
+
+
+    public function saleDetails()
+    {
+        return $this->hasMany(SaleDetail::class);
+    }
+
+    public function purchaseDetails()
+    {
+        return $this->hasMany(PurchaseDetail::class);
+    }
+
+    public function inventoryMovements()
+    {
+        return $this->hasMany(InventoryMovements::class);
     }
 }
